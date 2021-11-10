@@ -1,0 +1,32 @@
+// Media Breakpoints
+$xl: 87.5em; // 4k and hi-res desktop
+$lg: 60em; // 1080 and hi-res laptops
+$md: 40em; // hi-res tablets and low-res laptops
+$sm: 20em; // mobile only
+
+// Breakpoints mixin
+@mixin responsive($query) {
+  @media ( min-width: + $query ) {
+      @content;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
+}
+
+html {
+  font-size: 62.5%;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  line-height: 1.2;
+}
+
+body {
+  // outline: 2px solid red;
+  font-family: Quicksand;
+  min-width: 400px;
+}

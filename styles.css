@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+html {
+  font-size: 62.5%;
+  display: -ms-grid;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  line-height: 1.2;
+}
+
+body {
+  font-family: Quicksand;
+  min-width: 400px;
+}
+/*# sourceMappingURL=styles.css.map */
