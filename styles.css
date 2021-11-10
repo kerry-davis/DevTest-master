@@ -9,7 +9,6 @@ html {
   font-size: 62.5%;
   display: -ms-grid;
   display: grid;
-  min-height: 100vh;
   place-items: center;
   line-height: 1.45;
 }
@@ -31,6 +30,7 @@ body {
 
 @media (min-width: 40em) {
   .banner-container {
+    height: 40rem;
     font-size: 3.2rem;
   }
 }
@@ -69,7 +69,10 @@ body {
 
 @media (min-width: 40em) {
   .banner-title {
-    font-size: 3.2rem;
+    position: absolute;
+    top: 30px;
+    left: 80px;
+    font-size: 5.0rem;
   }
 }
 
@@ -97,7 +100,11 @@ body {
 
 @media (min-width: 40em) {
   .banner-subtitle {
-    font-size: 2.0rem;
+    position: absolute;
+    top: 110px;
+    left: 80px;
+    width: 25ch;
+    font-size: 3.4rem;
     padding: 5px;
   }
 }
@@ -135,9 +142,13 @@ body {
 
 @media (min-width: 40em) {
   .banner-btn {
-    margin-top: 2%;
-    margin-left: 0.6%;
-    font-size: 1.8rem;
+    font-size: 2.8rem;
+    position: absolute;
+    height: 46px;
+    width: 235px;
+    top: 260px;
+    left: 85px;
+    padding: 10px;
   }
 }
 
@@ -186,7 +197,8 @@ body {
 
 @media (min-width: 40em) {
   .services-title {
-    font-size: 3.8rem;
+    margin-top: 2%;
+    font-size: 7.8rem;
   }
 }
 
@@ -215,9 +227,10 @@ body {
 
 @media (min-width: 40em) {
   .services-subtitle {
-    padding-left: 4%;
+    padding-left: 10%;
     padding-right: 5%;
-    font-size: 2.2rem;
+    font-size: 3.2rem;
+    width: 38ch;
   }
 }
 
@@ -293,7 +306,7 @@ body {
   .service-card {
     padding: 1%;
     margin-left: 1%;
-    height: 420px;
+    height: 590px;
     position: relative;
   }
 }
@@ -362,7 +375,7 @@ body {
 
 @media (min-width: 40em) {
   .card-heading {
-    font-size: 2.4rem;
+    font-size: 3.4rem;
   }
 }
 
@@ -389,7 +402,7 @@ body {
 
 @media (min-width: 40em) {
   .card-text {
-    font-size: 1.6rem;
+    font-size: 2.0rem;
   }
 }
 
@@ -418,8 +431,10 @@ body {
 
 @media (min-width: 40em) {
   .service-link {
+    left: 0;
+    bottom: 25px;
     margin-bottom: 0;
-    font-size: 1.6rem;
+    font-size: 2.2rem;
   }
 }
 
