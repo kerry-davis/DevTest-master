@@ -44,6 +44,21 @@ body {
   // background-image: url(/assets/main-banner.png);
   background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #000000 65%), url(assets/main-banner.png);
   background-size: cover;
+
+  @include responsive($md) {
+    font-size: 3.2rem;
+  }
+  @include responsive($lg) {
+    font-size: 6.0rem;
+  }
+  @include responsive($xl) {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #000000 99%), url(assets/main-banner.png);
+    height: 80rem;
+    // position: absolute;
+    top: 0;
+    font-size: 7.0rem;
+  }
+
 }
 
 .banner {
@@ -65,6 +80,19 @@ body {
   padding: 0.5%;
   font-weight: 600;
 
+  @include responsive($md) {
+    font-size: 3.2rem;
+  }
+  @include responsive($lg) {
+    font-size: 6.0rem;
+  }
+  @include responsive($xl) {
+    position: absolute;
+    top: 130px;
+    left: 250px;
+    font-size: 7.0rem;
+  }
+
 }
 
 .banner-subtitle {
@@ -74,6 +102,22 @@ body {
   width: 28ch;
   font-weight: 500;
 
+  @include responsive($md) {
+    font-size: 2.0rem;
+    padding: 5px;
+  }
+  @include responsive($lg) {
+    font-size: 3.0rem;
+    padding: 6px;
+  }
+  @include responsive($xl) {
+    position: absolute;
+    top: 250px;
+    left: 250px;
+    width: 38ch;
+    font-size: 5.0rem;
+    padding: 6px;
+  }
 }
 
 .banner-btn {
@@ -84,9 +128,27 @@ body {
   height: 33px;
   width: 145px;
   border: 0;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: $links;
   color: white;
+
+  @include responsive($md) {
+    margin-top: 2%;
+    margin-left: 0.6%;
+    font-size: 1.8rem;
+  }
+  @include responsive($lg) {
+    font-size: 2.8rem;
+  }
+  @include responsive($xl) {
+    font-size: 3.4rem;
+    position: absolute;
+    height: 60px;
+    width: 245px;
+    top: 415px;
+    left: 250px;
+    padding: 10px;
+  }
 }
 
 .banner-link {
@@ -115,6 +177,17 @@ body {
   font-weight: 700;
   color: $primary;
 
+  @include responsive($md) {
+    font-size: 3.8rem;  
+  }
+  @include responsive($lg) {
+    font-size: 6.0rem;  
+  }
+  @include responsive($xl) {
+    margin-top: 2%;
+    font-size: 9.0rem;  
+  }
+
 }
 
 .services-subtitle {
@@ -127,6 +200,20 @@ body {
   text-align: center;
   color: $secondary;
 
+  @include responsive($md) {
+    padding-left: 4%;
+    padding-right: 5%;
+    font-size: 2.2rem;  
+  }
+  @include responsive($lg) {
+    padding-left: 3%;
+    font-size: 3.2rem;  
+  }
+  @include responsive($xl) {
+    padding-left: 20%;
+    font-size: 4.6rem;  
+    width: 40ch;
+  }
 }
 
 .services {
@@ -135,6 +222,20 @@ body {
   flex-direction: column;
   margin-bottom: 3.0rem;
 
+  @include responsive($md) {
+    margin-right: 1%;
+    padding: 1%;
+    flex-direction:row;
+  }
+  @include responsive($lg) {
+    padding-right: 1%;
+    flex-direction:row;
+  }
+  @include responsive($xl) {
+    height: 1000px;
+    padding-right: 1%;
+    flex-direction:row;
+  }
 }
 
 .service-card {
@@ -144,6 +245,25 @@ body {
   height: 450px;
   width: 64%;
   flex: 1;
+
+  @include responsive($md) {
+    padding: 1%;
+    margin-left: 1%;
+    height: 420px;
+    position: relative;
+  }
+  @include responsive($lg) {
+    margin-left: 1%;
+    padding: 0.5%;
+    height: 650px;
+  }
+  @include responsive($xl) {
+    // bottom: 0%
+    // margin-left: 1%;
+    padding: 0.5%;
+    height: 100%;
+    position: relative;
+  }
 
 }
 
@@ -166,6 +286,18 @@ body {
   height: 30%;
   padding-bottom: 0.8em;
 
+  @include responsive($md) {
+    padding-bottom: 1em;
+    height: 50%;
+  }
+  @include responsive($lg) {
+    padding-bottom: 2em;
+    height: 50%;
+  }
+  @include responsive($xl) {
+    padding-bottom: 3em;
+    height: 30%;
+  }
 }
 
 .card-heading {
@@ -174,6 +306,17 @@ body {
   font-weight: 700;
   // text-align: center;
   color: $primary;
+
+  @include responsive($md) {
+    font-size: 2.4rem;
+  }
+  @include responsive($lg) {
+    font-size: 3.2rem;
+  }
+  @include responsive($xl) {
+    margin: 40px 50px 14px 50px;
+    font-size: 4.8rem;
+  }
 }
 
 .card-text {
@@ -183,6 +326,17 @@ body {
   font-weight: 500;
   text-align: left;
   color: $secondary;
+
+  @include responsive($md) {
+    font-size: 1.6rem;
+  }
+  @include responsive($lg) {
+    font-size: 2.4rem;
+  }
+  @include responsive($xl) {
+    margin: 0 50px 0 50px;
+    font-size: 3.6rem;
+  }
 
 }
 
@@ -195,6 +349,21 @@ body {
   font-weight: 700;
   position: absolute;
   bottom: 0px;
+
+  @include responsive($md) {
+    // bottom: 0;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+  }
+  @include responsive($lg) {
+    // bottom: 4%;
+    font-size: 3.0rem;
+  }
+  @include responsive($xl) {
+    left: 5%;
+    bottom: 35px;
+    font-size: 3.4rem;
+  }
 
 }
 
