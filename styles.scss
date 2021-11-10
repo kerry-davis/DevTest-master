@@ -50,10 +50,6 @@ body {
     font-size: 3.2rem;
     // outline: 2px solid green;
   }
-  @include responsive($lg) {
-    font-size: 6.0rem;
-        // outline: 2px solid cyan;
-  }
   @include responsive($xl) {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #000000 99%), url(assets/main-banner.png);
     height: 80rem;
@@ -91,9 +87,6 @@ body {
     left: 80px;
     font-size: 5.0rem;
   }
-  @include responsive($lg) {
-    font-size: 6.0rem;
-  }
   @include responsive($xl) {
     position: absolute;
     top: 130px;
@@ -117,10 +110,6 @@ body {
     width: 25ch;
     font-size: 3.4rem;
     padding: 5px;
-  }
-  @include responsive($lg) {
-    font-size: 3.0rem;
-    padding: 6px;
   }
   @include responsive($xl) {
     position: absolute;
@@ -152,9 +141,6 @@ body {
     top: 260px;
     left: 85px;
     padding: 10px;
-  }
-  @include responsive($lg) {
-    font-size: 2.8rem;
   }
   @include responsive($xl) {
     font-size: 3.4rem;
@@ -197,9 +183,6 @@ body {
     margin-top: 2%;
     font-size: 7.8rem;  
   }
-  @include responsive($lg) {
-    font-size: 6.0rem;  
-  }
   @include responsive($xl) {
     margin-top: 2%;
     font-size: 9.0rem;  
@@ -223,10 +206,6 @@ body {
     font-size: 3.2rem;  
     width: 38ch;
   }
-  @include responsive($lg) {
-    padding-left: 3%;
-    font-size: 3.2rem;  
-  }
   @include responsive($xl) {
     padding-left: 20%;
     font-size: 4.6rem;  
@@ -243,10 +222,6 @@ body {
   @include responsive($md) {
     margin-right: 1%;
     padding: 1%;
-    flex-direction:row;
-  }
-  @include responsive($lg) {
-    padding-right: 1%;
     flex-direction:row;
   }
   @include responsive($xl) {
@@ -269,11 +244,6 @@ body {
     margin-left: 1%;
     height: 590px;
     position: relative;
-  }
-  @include responsive($lg) {
-    margin-left: 1%;
-    padding: 0.5%;
-    height: 650px;
   }
   @include responsive($xl) {
     // bottom: 0%
@@ -308,10 +278,6 @@ body {
     padding-bottom: 1em;
     height: 50%;
   }
-  @include responsive($lg) {
-    padding-bottom: 2em;
-    height: 50%;
-  }
   @include responsive($xl) {
     padding-bottom: 3em;
     height: 30%;
@@ -327,9 +293,6 @@ body {
 
   @include responsive($md) {
     font-size: 3.4rem;
-  }
-  @include responsive($lg) {
-    font-size: 3.2rem;
   }
   @include responsive($xl) {
     margin: 40px 50px 14px 50px;
@@ -347,9 +310,6 @@ body {
 
   @include responsive($md) {
     font-size: 2.0rem;
-  }
-  @include responsive($lg) {
-    font-size: 2.4rem;
   }
   @include responsive($xl) {
     margin: 0 50px 0 50px;
@@ -374,10 +334,6 @@ body {
     bottom: 25px;
     margin-bottom: 0;
     font-size: 2.2rem;
-  }
-  @include responsive($lg) {
-    // bottom: 4%;
-    font-size: 3.0rem;
   }
   @include responsive($xl) {
     left: 5%;

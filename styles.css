@@ -35,12 +35,6 @@ body {
   }
 }
 
-@media (min-width: 60em) {
-  .banner-container {
-    font-size: 6.0rem;
-  }
-}
-
 @media (min-width: 87.5em) {
   .banner-container {
     background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), color-stop(99%, #000000)), url(assets/main-banner.png);
@@ -76,12 +70,6 @@ body {
   }
 }
 
-@media (min-width: 60em) {
-  .banner-title {
-    font-size: 6.0rem;
-  }
-}
-
 @media (min-width: 87.5em) {
   .banner-title {
     position: absolute;
@@ -106,13 +94,6 @@ body {
     width: 25ch;
     font-size: 3.4rem;
     padding: 5px;
-  }
-}
-
-@media (min-width: 60em) {
-  .banner-subtitle {
-    font-size: 3.0rem;
-    padding: 6px;
   }
 }
 
@@ -149,12 +130,6 @@ body {
     top: 260px;
     left: 85px;
     padding: 10px;
-  }
-}
-
-@media (min-width: 60em) {
-  .banner-btn {
-    font-size: 2.8rem;
   }
 }
 
@@ -202,12 +177,6 @@ body {
   }
 }
 
-@media (min-width: 60em) {
-  .services-title {
-    font-size: 6.0rem;
-  }
-}
-
 @media (min-width: 87.5em) {
   .services-title {
     margin-top: 2%;
@@ -234,13 +203,6 @@ body {
   }
 }
 
-@media (min-width: 60em) {
-  .services-subtitle {
-    padding-left: 3%;
-    font-size: 3.2rem;
-  }
-}
-
 @media (min-width: 87.5em) {
   .services-subtitle {
     padding-left: 20%;
@@ -264,16 +226,6 @@ body {
   .services {
     margin-right: 1%;
     padding: 1%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-@media (min-width: 60em) {
-  .services {
-    padding-right: 1%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -311,14 +263,6 @@ body {
   }
 }
 
-@media (min-width: 60em) {
-  .service-card {
-    margin-left: 1%;
-    padding: 0.5%;
-    height: 650px;
-  }
-}
-
 @media (min-width: 87.5em) {
   .service-card {
     padding: 0.5%;
@@ -352,13 +296,6 @@ body {
   }
 }
 
-@media (min-width: 60em) {
-  .card-detail {
-    padding-bottom: 2em;
-    height: 50%;
-  }
-}
-
 @media (min-width: 87.5em) {
   .card-detail {
     padding-bottom: 3em;
@@ -376,12 +313,6 @@ body {
 @media (min-width: 40em) {
   .card-heading {
     font-size: 3.4rem;
-  }
-}
-
-@media (min-width: 60em) {
-  .card-heading {
-    font-size: 3.2rem;
   }
 }
 
@@ -403,12 +334,6 @@ body {
 @media (min-width: 40em) {
   .card-text {
     font-size: 2.0rem;
-  }
-}
-
-@media (min-width: 60em) {
-  .card-text {
-    font-size: 2.4rem;
   }
 }
 
@@ -435,12 +360,6 @@ body {
     bottom: 25px;
     margin-bottom: 0;
     font-size: 2.2rem;
-  }
-}
-
-@media (min-width: 60em) {
-  .service-link {
-    font-size: 3.0rem;
   }
 }
 
