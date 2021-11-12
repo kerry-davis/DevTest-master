@@ -10,7 +10,7 @@ $links: #de6c17;
 
 // Breakpoints mixin
 @mixin responsive($query) {
-  @media ( min-width: + $query ) {
+  @media ( min-width: $query ) {
       @content;
   }
 }
@@ -18,331 +18,142 @@ $links: #de6c17;
 *,
 *::before,
 *::after {
-  box-sizing: content-box;
+  margin: 0;
 }
 
 html {
-  font-size: 62.5%;
-  display: grid;
-  // min-height: 100vh;
-  place-items: center;
+  // font-size: 62.5%;
   line-height: 1.45;
 }
 
 body {
   font-family: Quicksand;
-  min-width: 400px;
 }
 
-.banner-container {
-  // outline: 2px solid red;
-  position: relative;
-  height: 12.7rem;
-  overflow: hidden;
-  // padding-top: 32%;
-  padding: 13rem 0 0;
-  // background-image: url(/assets/main-banner.png);
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #000000 65%), url(assets/main-banner.png);
-  background-size: cover;
-
-  @include responsive($md) {
-    height: 40rem;
-    font-size: 3.2rem;
-    // outline: 2px solid green;
-  }
-  @include responsive($xl) {
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #000000 99%), url(assets/main-banner.png);
-    height: 80rem;
-    // position: absolute;
-    top: 0;
-    font-size: 7.0rem;
-    // outline: 2px solid blue;
-
-  }
-
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas: 
+  "banner"
+  "services"
+  ;
+  grid-gap: 0.2rem;
 }
 
 .banner {
-  // outline: 2px solid pink;
-  position: absolute;
-  padding: 3%;
-  top: 10%;
-  left: 0%;
-  width: 90%;
-  height: 50%;
-  color: #ffffff;
-
-  // padding: 88.5px 316.5px 108px 109.5px;
-}
-
-.banner-title {
-  // outline: 2px solid green;
-  font-size: 3.0rem;
-  padding: 0.5%;
-  font-weight: 600;
-
-  @include responsive($md) {
-    position: absolute;
-    top: 30px;
-    left: 80px;
-    font-size: 5.0rem;
-  }
-  @include responsive($xl) {
-    position: absolute;
-    top: 130px;
-    left: 250px;
-    font-size: 7.0rem;
-  }
-
-}
-
-.banner-subtitle {
-  // outline: 2px solid orange;
-  font-size: 2.0rem;
-  padding: 1px;
-  width: 28ch;
-  font-weight: 500;
-
-  @include responsive($md) {
-    position: absolute;
-    top: 110px;
-    left: 80px;
-    width: 25ch;
-    font-size: 3.4rem;
-    padding: 5px;
-  }
-  @include responsive($xl) {
-    position: absolute;
-    top: 250px;
-    left: 250px;
-    width: 38ch;
-    font-size: 5.0rem;
-    padding: 6px;
-  }
-}
-
-.banner-btn {
-  font-size: 1.8rem;
-  font-weight: 400;  
-  margin-top: 3%;
-  padding: 1.5%;
-  height: 33px;
-  width: 145px;
-  border: 0;
-  border-radius: 8px;
-  background-color: $links;
-  color: white;
-
-  @include responsive($md) {
-    font-size: 2.8rem;
-    position: absolute;
-    height: 46px;
-    width: 235px;
-    top: 260px;
-    left: 85px;
-    padding: 10px;
-  }
-  @include responsive($xl) {
-    font-size: 3.4rem;
-    position: absolute;
-    height: 60px;
-    width: 245px;
-    top: 415px;
-    left: 250px;
-    padding: 10px;
-  }
-}
-
-.banner-link {
-  color: white;
-  text-decoration: none;
+  grid-area: banner;
+  // background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #000000 65%), url(assets/main-banner.png);
+  background-image: url(assets/main-banner.png);
+  background-size: cover;
 }
 
 .banner-wave {
-  // outline: 2px solid greenyellow;
-  bottom: -2px;
-  position: absolute;
-  width: 100%;
-}
-
-.services-header {
-  margin: 0;
-  padding: 0;
-}
-
-.services-title {
-  // outline: 2px solid purple;
-  margin-top: 8%;
-  margin-bottom: 2%;
-  text-align: center;
-  font-size: 3.0rem;  
-  font-weight: 700;
-  color: $primary;
-
-  @include responsive($md) {
-    margin-top: 2%;
-    font-size: 7.8rem;  
-  }
-  @include responsive($xl) {
-    margin-top: 2%;
-    font-size: 9.0rem;  
-  }
-
-}
-
-.services-subtitle {
-  // outline: 2px solid gold;
-  margin-top: 0%;
-  padding-left: 20%;
-  padding-right: 20%;
-  font-size: 2.0rem;  
-  font-weight: 500;
-  text-align: center;
-  color: $secondary;
-
-  @include responsive($md) {
-    padding-left: 10%;
-    padding-right: 5%;
-    font-size: 3.2rem;  
-    width: 38ch;
-  }
-  @include responsive($xl) {
-    padding-left: 20%;
-    font-size: 4.6rem;  
-    width: 40ch;
-  }
+  background: orangered;
+  
 }
 
 .services {
-  // outline: 2px solid purple;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 3.0rem;
+  // background: #64ffda;
+  grid-area: services;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr repeat(3, 1fr);
+  grid-template-areas: 
+  "services-heading"
+  "service-1"
+  "service-2"
+  "service-3"
+  ;
+  grid-gap: 0.2rem;
+}
 
-  @include responsive($md) {
-    margin-right: 1%;
-    padding: 1%;
-    flex-direction:row;
+.services-heading{
+  // background: #6fffd2;
+  grid-area: services-heading;  
+  .services-title {
+    font-size: 30px;
   }
-  @include responsive($xl) {
-    height: 1000px;
-    padding-right: 1%;
-    flex-direction:row;
+  .services-subtitle {
+    font-size: 20px;
   }
+}
+
+.service-1 {
+  // background: #a7ffeb;
+  grid-area: service-1;
+}
+
+.service-2 {
+  // background: #84ffff;
+  grid-area: service-2;
+  
+}
+
+.service-3 {
+  // background: #18ffff;
+  grid-area: service-3;
+  
 }
 
 .service-card {
-  // outline: 2px solid greenyellow;
-  padding: 8px;
-  margin-left: 16%;
-  height: 450px;
-  width: 64%;
-  flex: 1;
-
-  @include responsive($md) {
-    padding: 1%;
-    margin-left: 1%;
-    height: 590px;
-    position: relative;
-  }
-  @include responsive($xl) {
-    // bottom: 0%
-    // margin-left: 1%;
-    padding: 0.5%;
-    height: 100%;
-    position: relative;
-  }
-
-}
-
-.card-inner {
+  // background: #de6c17;
   border: 2px solid lightgrey;
-  border-radius: 20px;
+  border-radius: 8px;
+  max-width: 280px;
   overflow: hidden;
-  height: 100%;
-  position: relative;
+  justify-content: center;
+  margin: 0.5rem 5rem 1rem 20rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr 0.1fr;
+  grid-template-areas: 
+  "card-image"
+  "card-detail"
+  "card-link"
+  ;
 }
 
 .card-image {
-  // outline: 2px solid lightgrey;
+  grid-area: card-image;
+  height: 15vh;
   width: 100%;
-  display: block;
+  margin: 0;
 }
 
-.card-detail {
-  // outline: 2px solid orangered;
-  height: 30%;
-  padding-bottom: 0.8em;
-
-  @include responsive($md) {
-    padding-bottom: 1em;
-    height: 50%;
+.card-detail{
+  // background: #18ffff;
+  grid-area: card-detail;
+  width: 16rem;
+  height: 13.5rem;
+  margin-left: 1.2rem;
+  
+  .card-heading {
+    font-size: 24px;
+    margin: 0.1rem 0 0.5rem 0;
+    color: $primary;
   }
-  @include responsive($xl) {
-    padding-bottom: 3em;
-    height: 30%;
+  .card-text {
+    font-size: 16px;
+    margin: 0.1rem 1rem 0 0;
+    color: $secondary;
   }
 }
 
-.card-heading {
-  margin: 20px 20px 10px 20px;
-  font-size: 2.4rem;  
+.card-link {
+  grid-area: card-link;
+  font-size: 18px;
   font-weight: 700;
-  // text-align: center;
-  color: $primary;
-
-  @include responsive($md) {
-    font-size: 3.4rem;
-  }
-  @include responsive($xl) {
-    margin: 40px 50px 14px 50px;
-    font-size: 4.8rem;
-  }
-}
-
-.card-text {
-  // outline: 2px solid greenyellow;
-  margin: 0 20px 0 20px;
-  font-size: 1.6rem;  
-  font-weight: 500;
-  text-align: left;
-  color: $secondary;
-
-  @include responsive($md) {
-    font-size: 2.0rem;
-  }
-  @include responsive($xl) {
-    margin: 0 50px 0 50px;
-    font-size: 3.6rem;
-  }
-
-}
-
-.service-link {
-  // outline: 2px solid greenyellow;
-  margin: 0px 0px 15px 20px;
-  font-size: 1.8rem;
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
+  padding: 0;
   color: $links;
   text-decoration: none;
-  font-weight: 700;
-  position: absolute;
-  bottom: 0px;
-
-  @include responsive($md) {
-    // bottom: 0;
-    left: 0;
-    bottom: 25px;
-    margin-bottom: 0;
-    font-size: 2.2rem;
-  }
-  @include responsive($xl) {
-    left: 5%;
-    bottom: 35px;
-    font-size: 3.4rem;
-  }
-
 }
 
-.service-link:after {
-  content: " >"
+.card-link:after {
+  content: " >";
 }
