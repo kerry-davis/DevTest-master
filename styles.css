@@ -15,7 +15,6 @@ body {
 .container {
   display: -ms-grid;
   display: grid;
-  height: 100vh;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   -ms-grid-rows: 1fr 3fr;
@@ -28,18 +27,67 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: banner;
-  background-image: url(assets/main-banner.png);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), color-stop(65%, rgba(0, 0, 0, 0.5))), url(assets/main-banner.png);
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5) 65%), url(assets/main-banner.png);
   background-size: cover;
+  background-position: top center;
+  height: 40vh;
+  width: 100vw;
+  position: relative;
+}
+
+.banner-title {
+  grid-area: -title;
+  font-size: 30px;
+  font-weight: 700;
+  color: #f2f2f2;
+  margin-left: 1rem;
+  margin-top: 2.5rem;
+}
+
+.banner-subtitle {
+  margin-top: 0.6rem;
+  font-size: 20px;
+  font-weight: 500;
+  width: 25ch;
+  color: #f2f2f2;
+  margin-left: 1rem;
+}
+
+.banner-link {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  padding-top: 10px;
+  color: #f2f2f2;
+  background-color: #de6c17;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 4px;
 }
 
 .banner-wave {
-  background: orangered;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
 }
 
 .services {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: services;
+  position: absolute;
+  top: 300px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -90,7 +138,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0.5rem 5rem 1rem 20rem;
+  margin: 0.5rem 1rem 1rem 2.5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -104,7 +152,6 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: card-image;
-  height: 15vh;
   width: 100%;
   margin: 0;
 }
