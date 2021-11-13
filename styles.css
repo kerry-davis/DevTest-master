@@ -97,6 +97,13 @@ body {
   grid-gap: 0.2rem;
 }
 
+@media (min-width: 40em) {
+  .services {
+    -ms-grid-rows: 0.1fr (0.1fr)[3];
+        grid-template-rows: 0.1fr repeat(3, 0.1fr);
+  }
+}
+
 .services-heading {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -124,16 +131,34 @@ body {
   grid-area: service-1;
 }
 
+@media (min-width: 40em) {
+  .service-1 {
+    height: 16rem;
+  }
+}
+
 .service-2 {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: service-2;
 }
 
+@media (min-width: 40em) {
+  .service-2 {
+    height: 16rem;
+  }
+}
+
 .service-3 {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: service-3;
+}
+
+@media (min-width: 40em) {
+  .service-3 {
+    height: 16rem;
+  }
 }
 
 .service-card {
@@ -154,12 +179,33 @@ body {
       grid-template-areas: "card-image" "card-detail" "card-link";
 }
 
+@media (min-width: 40em) {
+  .service-card {
+    max-width: 80%;
+    margin-left: 5rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "card-image card-detail" "card-image card-detail" "card-image card-link";
+  }
+}
+
 .card-image {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: card-image;
   width: 100%;
   margin: 0;
+}
+
+@media (min-width: 40em) {
+  .card-image {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .card-detail {
@@ -171,16 +217,36 @@ body {
   margin-left: 1.2rem;
 }
 
+@media (min-width: 40em) {
+  .card-detail {
+    margin-left: 0.2rem;
+    height: 12rem;
+    width: 100%;
+  }
+}
+
 .card-detail .card-heading {
   font-size: 24px;
   margin: 0.1rem 0 0.5rem 0;
   color: #36413c;
 }
 
+@media (min-width: 40em) {
+  .card-detail .card-heading {
+    margin: 1.3rem 1rem 0 1rem;
+  }
+}
+
 .card-detail .card-text {
   font-size: 16px;
-  margin: 0.1rem 1rem 0 0;
   color: #5e6e66;
+}
+
+@media (min-width: 40em) {
+  .card-detail .card-text {
+    margin: 0.5rem 0 0 1rem;
+    width: 35ch;
+  }
 }
 
 .card-link {
@@ -194,6 +260,13 @@ body {
   padding: 0;
   color: #de6c17;
   text-decoration: none;
+}
+
+@media (min-width: 40em) {
+  .card-link {
+    margin: 0rem 1rem 01rem 1.2rem;
+    width: 33ch;
+  }
 }
 
 .card-link:after {
