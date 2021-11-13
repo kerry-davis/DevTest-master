@@ -57,6 +57,11 @@ body {
   padding-top: 2.5rem;
   position: relative;
 
+  @include responsive($md) {
+    height: 100%;
+    max-height: 100%;
+  }
+
 }
 
 .banner-title {
@@ -64,6 +69,12 @@ body {
   font-weight: 700;
   color: $banner;
   margin: 3.5rem 0 0 2rem;
+  
+  @include responsive($md) {
+    margin: 0 0 0 5rem;
+    font-size: 40px;
+    font-weight: 700;
+  }
 }
 
 .banner-subtitle {
@@ -73,6 +84,12 @@ body {
   width: 22ch;
   color: $banner;
   margin-left: 2rem;
+
+  @include responsive($md) {
+    margin: 0.6rem 0 0 5rem;
+    font-size: 26px;
+    font-weight: 500;
+  }
 }
 
 .banner-link {
@@ -86,6 +103,10 @@ body {
   width: 150px;
   height: 40px;
   border-radius: 4px;
+
+  @include responsive($md) {
+    margin: 1rem 0 2rem 5rem;
+  }
 }
 
 .banner-wave {
@@ -127,6 +148,10 @@ body {
     font-size: 34px;
     text-align: center;
     margin-top: 1.5rem;
+    @include responsive($md) {
+      margin-top: 4.5rem;
+
+    }
   }
   .services-subtitle {
     font-size: 24px;
