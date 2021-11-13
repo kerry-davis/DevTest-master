@@ -112,6 +112,10 @@ body {
 
 .services-heading .services-subtitle {
   font-size: 20px;
+  text-align: center;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+  width: 25ch;
 }
 
 .service-1 {
