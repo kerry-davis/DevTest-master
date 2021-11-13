@@ -52,10 +52,11 @@ body {
   background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0,0,0,0.5) 65%), url(assets/main-banner.png);
   background-size: cover;
   background-position: top center;
-  height: 45vh;//100% view height
+  height: 100%;
   width: 100vw;// 100% view width}
   padding-top: 2.5rem;
   position: relative;
+
 }
 
 .banner-title {
@@ -100,9 +101,6 @@ body {
 .services {
   // background: #64ffda;
   grid-area: services;
-
-  // position: absolute;
-  // top: 23rem;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -185,7 +183,11 @@ body {
 
   @include responsive($md) {
     // outline: 2px solid green;
-    max-width: 80%;
+    max-width:45rem;
+    width:45rem;
+    
+    height: 15rem;
+    max-height: 15rem;
     // justify-content: left;
     margin-left: 5rem;
 

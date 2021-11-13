@@ -38,7 +38,7 @@ body {
   background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5) 65%), url(assets/main-banner.png);
   background-size: cover;
   background-position: top center;
-  height: 45vh;
+  height: 100%;
   width: 100vw;
   padding-top: 2.5rem;
   position: relative;
@@ -181,7 +181,10 @@ body {
 
 @media (min-width: 40em) {
   .service-card {
-    max-width: 80%;
+    max-width: 45rem;
+    width: 45rem;
+    height: 15rem;
+    max-height: 15rem;
     margin-left: 5rem;
     display: -ms-grid;
     display: grid;
