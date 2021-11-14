@@ -16,6 +16,12 @@ $banner: #f2f2f2;
   }
 }
 
+@mixin responsive-2($query1, $query2) {
+  @media ( min-width: $query1 ) and ( max-width: $query2 ) {
+      @content;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -44,6 +50,19 @@ body {
 }
 
 .banner {
+  @include responsive($sm) {
+    outline: solid red;
+  }
+  @include responsive($md) {
+    outline: solid gold;
+  }
+  @include responsive($lg) {
+    outline: solid green;
+  }
+  @include responsive($xl) {
+    outline: solid blue;
+  }
+
   grid-area: banner;
 
   display: flex;
@@ -61,6 +80,11 @@ body {
     height: 100%;
     max-height: 100%;
   }
+  
+  @include responsive($lg) {
+    height: 130%;
+    max-height: 130%;
+  }
 
 }
 
@@ -72,6 +96,16 @@ body {
   
   @include responsive($md) {
     margin: 0 0 0 5rem;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  @include responsive($lg) {
+    margin: 5rem 0 0 8rem;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  @include responsive($xl) {
+    margin: 8rem 0 0 12rem;
     font-size: 40px;
     font-weight: 700;
   }
@@ -87,6 +121,16 @@ body {
 
   @include responsive($md) {
     margin: 0.6rem 0 0 5rem;
+    font-size: 26px;
+    font-weight: 500;
+  }
+  @include responsive($lg) {
+    margin: 0.6rem 0 0 8rem;
+    font-size: 26px;
+    font-weight: 500;
+  }
+  @include responsive($xl) {
+    margin: 0.6rem 0 0 12rem;
     font-size: 26px;
     font-weight: 500;
   }
@@ -106,6 +150,12 @@ body {
 
   @include responsive($md) {
     margin: 1rem 0 2rem 5rem;
+  }
+  @include responsive($lg) {
+    margin: 1rem 0 2rem 8rem;
+  }
+  @include responsive($xl) {
+    margin: 1rem 0 2rem 12rem;
   }
 }
 
@@ -133,6 +183,15 @@ body {
   "service-3"
   ;
   grid-gap: 0.2rem;
+  
+  @include responsive($xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    ". services-heading ."
+    "service-1 service-2 service-3"
+    ;
+  }
 }
 
 .services-heading {
@@ -150,7 +209,12 @@ body {
     margin-top: 1.5rem;
     @include responsive($md) {
       margin-top: 4.5rem;
-
+    }
+    @include responsive($lg) {
+      margin-top: 12rem;
+    }
+    @include responsive($xl) {
+      margin-top: 15rem;
     }
   }
   .services-subtitle {
@@ -162,6 +226,16 @@ body {
       margin: 0 2rem 2.5rem 5rem;
       width: 100%;
       max-width: 51ch;
+    }
+    @include responsive($lg) {
+      margin: 0 2rem 2.5rem 12.5rem;
+      width: 100%;
+      max-width: 57ch;
+    }
+    @include responsive($xl) {
+      margin: 0 2rem 2.5rem 35rem;
+      width: 100%;
+      // max-width: 5ch;
     }
   }
 }
@@ -194,7 +268,7 @@ body {
 }
 
 .service-card {
-  // background: #de6c17;
+  background: #de6c17;
   border: 2px solid lightgrey;
   border-radius: 8px;
   margin: 0 3rem 0.625rem 2.5rem;
@@ -228,6 +302,36 @@ body {
     "card-image card-link"
     ;
   }
+
+  @include responsive($lg) {
+    height: 15rem;
+    max-height: 15rem;
+    margin: 0.5rem 10rem;
+
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "card-image card-detail"
+    "card-image card-detail"
+    "card-image card-link"
+    ;
+  }
+
+  @include responsive($xl) {
+    height: 15rem;
+    max-height: 15rem;
+    max-width: 25rem;
+    // margin: 0.5rem 20rem;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr 0.1fr;
+    grid-template-areas: 
+    "card-image"
+    "card-detail"
+    "card-link"
+    ;
+  }
+
 }
 
 .card-image {
@@ -236,6 +340,10 @@ body {
   margin: 0;
 
   @include responsive($md) {
+    width: 100%;
+    height: 100%;
+  }
+  @include responsive($lg) {
     width: 100%;
     height: 100%;
   }
@@ -270,6 +378,10 @@ body {
     @include responsive($md) {
       margin: 0.5rem 0 0 1rem;
       width: 35ch;
+    }
+    @include responsive($md) {
+      margin: 0.5rem 0 0 1rem;
+      width: 44ch;
     }
   }
 }
