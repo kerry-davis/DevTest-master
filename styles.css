@@ -409,6 +409,31 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
+  min-width: 20rem;
+}
+
+@media (min-width: 20em) {
+  .card-image {
+    min-width: 20rem;
+  }
+}
+
+@media (min-width: 40em) {
+  .card-image {
+    min-width: 18rem;
+  }
+}
+
+@media (min-width: 40em) {
+  .card-image {
+    min-width: 15rem;
+  }
+}
+
+@media (min-width: 60em) {
+  .card-image {
+    min-width: 20rem;
+  }
 }
 
 .card-detail {
@@ -418,6 +443,7 @@ body {
   width: 16rem;
   height: 14.5rem;
   margin-left: 1.2rem;
+  margin-top: 1.3rem;
 }
 
 @media (min-width: 40em) {
@@ -425,6 +451,7 @@ body {
     margin-left: 0.2rem;
     height: 12rem;
     width: 100%;
+    margin-top: 0;
   }
 }
 

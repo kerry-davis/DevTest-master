@@ -367,6 +367,20 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
+  min-width: 20rem;
+  @include responsive($sm) {
+    min-width: 20rem;
+  }
+  @include responsive($md) {
+    min-width: 18rem;
+  }
+  @include responsive($md) {
+    min-width: 15rem;
+  }
+  @include responsive($lg) {
+    min-width: 20rem;
+  }
+
 }
 
 .card-detail{
@@ -375,11 +389,13 @@ body {
   width: 16rem;
   height: 14.5rem;
   margin-left: 1.2rem;
+  margin-top: 1.3rem;
   
   @include responsive($md) {
     margin-left: 0.2rem;
     height: 12rem;
     width: 100%;
+    margin-top: 0;
   }
   
   .card-heading {
