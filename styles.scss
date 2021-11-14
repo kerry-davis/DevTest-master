@@ -85,6 +85,10 @@ body {
     height: 130%;
     max-height: 130%;
   }
+  @include responsive($xl) {
+    height: 150%;
+    max-height: 150%;
+  }
 
 }
 
@@ -105,7 +109,7 @@ body {
     font-weight: 700;
   }
   @include responsive($xl) {
-    margin: 8rem 0 0 12rem;
+    margin: 15rem 0 0 20rem;
     font-size: 40px;
     font-weight: 700;
   }
@@ -130,9 +134,10 @@ body {
     font-weight: 500;
   }
   @include responsive($xl) {
-    margin: 0.6rem 0 0 12rem;
+    margin: 0.6rem 0 1rem 20rem;
     font-size: 26px;
     font-weight: 500;
+    width: 42ch;
   }
 }
 
@@ -155,7 +160,7 @@ body {
     margin: 1rem 0 2rem 8rem;
   }
   @include responsive($xl) {
-    margin: 1rem 0 2rem 12rem;
+    margin: 1rem 0 2rem 20rem;
   }
 }
 
@@ -185,10 +190,10 @@ body {
   grid-gap: 0.2rem;
   
   @include responsive($xl) {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 0.1fr 0.1fr 0.1fr;
+    grid-template-rows: 0.1fr 0.1fr;
     grid-template-areas: 
-    ". services-heading ."
+    "services-heading services-heading services-heading"
     "service-1 service-2 service-3"
     ;
   }
@@ -214,7 +219,8 @@ body {
       margin-top: 12rem;
     }
     @include responsive($xl) {
-      margin-top: 15rem;
+      margin: 20rem 0 0 20rem;
+
     }
   }
   .services-subtitle {
@@ -233,7 +239,7 @@ body {
       max-width: 57ch;
     }
     @include responsive($xl) {
-      margin: 0 2rem 2.5rem 35rem;
+      margin: 0 2rem 5rem 35rem;
       width: 100%;
       // max-width: 5ch;
     }
@@ -247,6 +253,10 @@ body {
   @include responsive($md) {
     height: 16rem;
   }
+  @include responsive($xl) {
+    margin: 0 2rem 0 25rem;
+    max-width: 100%;
+  }
 }
 
 .service-2 {
@@ -254,6 +264,10 @@ body {
   grid-area: service-2;
   @include responsive($md) {
     height: 16rem;
+  }
+  @include responsive($xl) {
+    margin: 0 2rem 0 0;
+    max-width: 100%;
   }
   
 }
@@ -264,11 +278,15 @@ body {
   @include responsive($md) {
     height: 16rem;
   }
+  @include responsive($xl) {
+    margin: 0 0 0 0;
+    max-width: 100%;
+  }
   
 }
 
 .service-card {
-  background: #de6c17;
+  // background: #de6c17;
   border: 2px solid lightgrey;
   border-radius: 8px;
   margin: 0 3rem 0.625rem 2.5rem;
@@ -318,10 +336,10 @@ body {
   }
 
   @include responsive($xl) {
-    height: 15rem;
-    max-height: 15rem;
+    height: 35rem;
+    max-height: 35rem;
     max-width: 25rem;
-    // margin: 0.5rem 20rem;
+    margin: 0;
 
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 0.5fr 0.1fr;
@@ -340,11 +358,12 @@ body {
   margin: 0;
 
   @include responsive($md) {
-    width: 100%;
     height: 100%;
   }
   @include responsive($lg) {
-    width: 100%;
+    height: 100%;
+  }
+  @include responsive($xl) {
     height: 100%;
   }
 }
@@ -379,9 +398,13 @@ body {
       margin: 0.5rem 0 0 1rem;
       width: 35ch;
     }
-    @include responsive($md) {
+    @include responsive($lg) {
       margin: 0.5rem 0 0 1rem;
       width: 44ch;
+    }
+    @include responsive($xl) {
+      margin: 0.5rem 0 0 1rem;
+      width: 30ch;
     }
   }
 }
@@ -399,6 +422,9 @@ body {
 
   @include responsive($md) {
     margin: 0rem 1rem 01rem 1.2rem;
+  }
+  @include responsive($xl) {
+    margin: 2rem 1rem 01rem 1.2rem;
   }
 }
 

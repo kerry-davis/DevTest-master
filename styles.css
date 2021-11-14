@@ -82,6 +82,13 @@ body {
   }
 }
 
+@media (min-width: 87.5em) {
+  .banner {
+    height: 150%;
+    max-height: 150%;
+  }
+}
+
 .banner-title {
   font-size: 30px;
   font-weight: 700;
@@ -107,7 +114,7 @@ body {
 
 @media (min-width: 87.5em) {
   .banner-title {
-    margin: 8rem 0 0 12rem;
+    margin: 15rem 0 0 20rem;
     font-size: 40px;
     font-weight: 700;
   }
@@ -140,9 +147,10 @@ body {
 
 @media (min-width: 87.5em) {
   .banner-subtitle {
-    margin: 0.6rem 0 0 12rem;
+    margin: 0.6rem 0 1rem 20rem;
     font-size: 26px;
     font-weight: 500;
+    width: 42ch;
   }
 }
 
@@ -173,7 +181,7 @@ body {
 
 @media (min-width: 87.5em) {
   .banner-link {
-    margin: 1rem 0 2rem 12rem;
+    margin: 1rem 0 2rem 20rem;
   }
 }
 
@@ -207,11 +215,11 @@ body {
 
 @media (min-width: 87.5em) {
   .services {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: ". services-heading ." "service-1 service-2 service-3";
+    -ms-grid-columns: 0.1fr 0.1fr 0.1fr;
+        grid-template-columns: 0.1fr 0.1fr 0.1fr;
+    -ms-grid-rows: 0.1fr 0.1fr;
+        grid-template-rows: 0.1fr 0.1fr;
+        grid-template-areas: "services-heading services-heading services-heading" "service-1 service-2 service-3";
   }
 }
 
@@ -248,7 +256,7 @@ body {
 
 @media (min-width: 87.5em) {
   .services-heading .services-title {
-    margin-top: 15rem;
+    margin: 20rem 0 0 20rem;
   }
 }
 
@@ -277,7 +285,7 @@ body {
 
 @media (min-width: 87.5em) {
   .services-heading .services-subtitle {
-    margin: 0 2rem 2.5rem 35rem;
+    margin: 0 2rem 5rem 35rem;
     width: 100%;
   }
 }
@@ -295,6 +303,13 @@ body {
   }
 }
 
+@media (min-width: 87.5em) {
+  .service-1 {
+    margin: 0 2rem 0 25rem;
+    max-width: 100%;
+  }
+}
+
 .service-2 {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -304,6 +319,13 @@ body {
 @media (min-width: 40em) {
   .service-2 {
     height: 16rem;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .service-2 {
+    margin: 0 2rem 0 0;
+    max-width: 100%;
   }
 }
 
@@ -319,8 +341,14 @@ body {
   }
 }
 
+@media (min-width: 87.5em) {
+  .service-3 {
+    margin: 0 0 0 0;
+    max-width: 100%;
+  }
+}
+
 .service-card {
-  background: #de6c17;
   border: 2px solid lightgrey;
   border-radius: 8px;
   margin: 0 3rem 0.625rem 2.5rem;
@@ -364,9 +392,10 @@ body {
 
 @media (min-width: 87.5em) {
   .service-card {
-    height: 15rem;
-    max-height: 15rem;
+    height: 35rem;
+    max-height: 35rem;
     max-width: 25rem;
+    margin: 0;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     -ms-grid-rows: 1fr 0.5fr 0.1fr;
@@ -385,14 +414,18 @@ body {
 
 @media (min-width: 40em) {
   .card-image {
-    width: 100%;
     height: 100%;
   }
 }
 
 @media (min-width: 60em) {
   .card-image {
-    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .card-image {
     height: 100%;
   }
 }
@@ -438,10 +471,17 @@ body {
   }
 }
 
-@media (min-width: 40em) {
+@media (min-width: 60em) {
   .card-detail .card-text {
     margin: 0.5rem 0 0 1rem;
     width: 44ch;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .card-detail .card-text {
+    margin: 0.5rem 0 0 1rem;
+    width: 30ch;
   }
 }
 
@@ -460,6 +500,12 @@ body {
 @media (min-width: 40em) {
   .card-link {
     margin: 0rem 1rem 01rem 1.2rem;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .card-link {
+    margin: 2rem 1rem 01rem 1.2rem;
   }
 }
 
