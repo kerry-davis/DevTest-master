@@ -23,6 +23,27 @@ body {
   grid-gap: 0.2rem;
 }
 
+@media (min-width: 40em) {
+  .container {
+    -ms-grid-rows: 1fr 3.2fr;
+        grid-template-rows: 1fr 3.2fr;
+  }
+}
+
+@media (min-width: 60em) {
+  .container {
+    -ms-grid-rows: 1fr 2.8fr;
+        grid-template-rows: 1fr 2.8fr;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .container {
+    -ms-grid-rows: 1fr 2.2fr;
+        grid-template-rows: 1fr 2.2fr;
+  }
+}
+
 .banner {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -42,30 +63,6 @@ body {
   width: 100vw;
   padding-top: 2.5rem;
   position: relative;
-}
-
-@media (min-width: 20em) {
-  .banner {
-    outline: solid red;
-  }
-}
-
-@media (min-width: 40em) {
-  .banner {
-    outline: solid gold;
-  }
-}
-
-@media (min-width: 60em) {
-  .banner {
-    outline: solid green;
-  }
-}
-
-@media (min-width: 87.5em) {
-  .banner {
-    outline: solid blue;
-  }
 }
 
 @media (min-width: 40em) {
@@ -115,7 +112,7 @@ body {
 @media (min-width: 87.5em) {
   .banner-title {
     margin: 15rem 0 0 20rem;
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 700;
   }
 }
@@ -257,6 +254,7 @@ body {
 @media (min-width: 87.5em) {
   .services-heading .services-title {
     margin: 20rem 0 0 20rem;
+    font-size: 45px;
   }
 }
 
@@ -285,7 +283,7 @@ body {
 
 @media (min-width: 87.5em) {
   .services-heading .services-subtitle {
-    margin: 0 2rem 5rem 35rem;
+    margin: 0 2rem 5rem 33rem;
     width: 100%;
   }
 }
@@ -409,25 +407,8 @@ body {
   -ms-grid-column: 1;
   grid-area: card-image;
   width: 100%;
+  height: 100%;
   margin: 0;
-}
-
-@media (min-width: 40em) {
-  .card-image {
-    height: 100%;
-  }
-}
-
-@media (min-width: 60em) {
-  .card-image {
-    height: 100%;
-  }
-}
-
-@media (min-width: 87.5em) {
-  .card-image {
-    height: 100%;
-  }
 }
 
 .card-detail {

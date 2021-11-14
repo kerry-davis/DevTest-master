@@ -42,6 +42,16 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4fr;
+
+  @include responsive($md) {
+    grid-template-rows: 1fr 3.2fr;
+  }
+  @include responsive($lg) {
+    grid-template-rows: 1fr 2.8fr;
+  }
+  @include responsive($xl) {
+    grid-template-rows: 1fr 2.2fr;
+  }
   grid-template-areas: 
   "banner"
   "services"
@@ -50,18 +60,18 @@ body {
 }
 
 .banner {
-  @include responsive($sm) {
-    outline: solid red;
-  }
-  @include responsive($md) {
-    outline: solid gold;
-  }
-  @include responsive($lg) {
-    outline: solid green;
-  }
-  @include responsive($xl) {
-    outline: solid blue;
-  }
+  // @include responsive($sm) {
+  //   outline: solid red;
+  // }
+  // @include responsive($md) {
+  //   outline: solid gold;
+  // }
+  // @include responsive($lg) {
+  //   outline: solid green;
+  // }
+  // @include responsive($xl) {
+  //   outline: solid blue;
+  // }
 
   grid-area: banner;
 
@@ -110,7 +120,7 @@ body {
   }
   @include responsive($xl) {
     margin: 15rem 0 0 20rem;
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 700;
   }
 }
@@ -220,7 +230,7 @@ body {
     }
     @include responsive($xl) {
       margin: 20rem 0 0 20rem;
-
+      font-size: 45px;
     }
   }
   .services-subtitle {
@@ -239,7 +249,7 @@ body {
       max-width: 57ch;
     }
     @include responsive($xl) {
-      margin: 0 2rem 5rem 35rem;
+      margin: 0 2rem 5rem 33rem;
       width: 100%;
       // max-width: 5ch;
     }
@@ -355,17 +365,8 @@ body {
 .card-image {
   grid-area: card-image;
   width: 100%;
+  height: 100%;
   margin: 0;
-
-  @include responsive($md) {
-    height: 100%;
-  }
-  @include responsive($lg) {
-    height: 100%;
-  }
-  @include responsive($xl) {
-    height: 100%;
-  }
 }
 
 .card-detail{
