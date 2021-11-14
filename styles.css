@@ -153,15 +153,15 @@ body {
 
 .banner-link {
   margin: 1rem 0 0 2rem;
-  padding-top: 10px;
+  padding: 0.5em 0.75em;
   color: #f2f2f2;
   background-color: #de6c17;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.25rem;
   text-align: center;
-  width: 150px;
-  height: 40px;
-  border-radius: 4px;
+  width: 9rem;
+  height: 2rem;
+  border-radius: 0.25rem;
 }
 
 @media (min-width: 40em) {
@@ -180,6 +180,10 @@ body {
   .banner-link {
     margin: 1rem 0 2rem 20rem;
   }
+}
+
+.banner-link:hover, .banner-link:focus {
+  background: #eb883d;
 }
 
 .banner-wave {
@@ -348,6 +352,8 @@ body {
 
 .service-card {
   border: 2px solid lightgrey;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   margin: 0 3rem 0.625rem 2.5rem;
   overflow: hidden;
@@ -359,6 +365,10 @@ body {
   -ms-grid-rows: 1fr 0.5fr 0.1fr;
       grid-template-rows: 1fr 0.5fr 0.1fr;
       grid-template-areas: "card-image" "card-detail" "card-link";
+  -webkit-transition: 200ms -webkit-transform ease-in-out;
+  transition: 200ms -webkit-transform ease-in-out;
+  transition: 200ms transform ease-in-out;
+  transition: 200ms transform ease-in-out, 200ms -webkit-transform ease-in-out;
 }
 
 @media (min-width: 40em) {
@@ -402,14 +412,26 @@ body {
   }
 }
 
+.service-card:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+}
+
 .card-image {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: card-image;
   width: 100%;
   height: 100%;
+  max-height: 100%;
   margin: 0;
   min-width: 20rem;
+  display: block;
+  aspect-ratio: 16 / 9;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 @media (min-width: 20em) {
