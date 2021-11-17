@@ -7,10 +7,17 @@ $sm: 20em; // mobile only
 $primary: #36413c;
 $secondary: #5e6e66;
 $links: #de6c17;
+$banner: #f2f2f2;
 
 // Breakpoints mixin
 @mixin responsive($query) {
-  @media ( min-width: + $query ) {
+  @media ( min-width: $query ) {
+      @content;
+  }
+}
+
+@mixin responsive-2($query1, $query2) {
+  @media ( min-width: $query1 ) and ( max-width: $query2 ) {
       @content;
   }
 }
@@ -18,331 +25,441 @@ $links: #de6c17;
 *,
 *::before,
 *::after {
-  box-sizing: content-box;
+  margin: 0;
 }
 
 html {
-  font-size: 62.5%;
-  display: grid;
-  // min-height: 100vh;
-  place-items: center;
   line-height: 1.45;
 }
 
 body {
   font-family: Quicksand;
-  min-width: 400px;
 }
 
-.banner-container {
-  // outline: 2px solid red;
-  position: relative;
-  height: 12.7rem;
-  overflow: hidden;
-  // padding-top: 32%;
-  padding: 13rem 0 0;
-  // background-image: url(/assets/main-banner.png);
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #000000 65%), url(assets/main-banner.png);
-  background-size: cover;
+.container {
+    // background: #64ffda;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr;
 
   @include responsive($md) {
-    height: 40rem;
-    font-size: 3.2rem;
-    // outline: 2px solid green;
+    grid-template-rows: 1fr 3.2fr;
+  }
+  @include responsive($lg) {
+    grid-template-rows: 1fr 2.8fr;
   }
   @include responsive($xl) {
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #000000 99%), url(assets/main-banner.png);
-    height: 80rem;
-    // position: absolute;
-    top: 0;
-    font-size: 7.0rem;
-    // outline: 2px solid blue;
-
+    grid-template-rows: 1fr 2.2fr;
   }
-
+  grid-template-areas: 
+  "banner"
+  "services"
+  ;
+  grid-gap: 0.2rem;
 }
 
 .banner {
-  // outline: 2px solid pink;
-  position: absolute;
-  padding: 3%;
-  top: 10%;
-  left: 0%;
-  width: 90%;
-  height: 50%;
-  color: #ffffff;
+  // @include responsive($sm) {
+  //   outline: solid red;
+  // }
+  // @include responsive($md) {
+  //   outline: solid gold;
+  // }
+  // @include responsive($lg) {
+  //   outline: solid green;
+  // }
+  // @include responsive($xl) {
+  //   outline: solid blue;
+  // }
 
-  // padding: 88.5px 316.5px 108px 109.5px;
+  grid-area: banner;
+
+  display: flex;
+  flex-direction: column;
+
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0,0,0,0.5) 65%), url(assets/main-banner.png);
+  background-size: cover;
+  background-position: top center;
+  height: 90%;
+  width: 100%;
+  padding-top: 2.5rem;
+  position: relative;
+
+  @include responsive($md) {
+    height: 100%;
+    max-height: 100%;
+  }
+  
+  @include responsive($lg) {
+    height: 130%;
+    max-height: 130%;
+  }
+  @include responsive($xl) {
+    height: 150%;
+    max-height: 150%;
+  }
+
 }
 
 .banner-title {
-  // outline: 2px solid green;
-  font-size: 3.0rem;
-  padding: 0.5%;
-  font-weight: 600;
-
+  font-size: 30px;
+  font-weight: 700;
+  color: $banner;
+  margin: 3.5rem 0 0 2rem;
+  
   @include responsive($md) {
-    position: absolute;
-    top: 30px;
-    left: 80px;
-    font-size: 5.0rem;
+    margin: 0 0 0 5rem;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  @include responsive($lg) {
+    margin: 5rem 0 0 8rem;
+    font-size: 40px;
+    font-weight: 700;
   }
   @include responsive($xl) {
-    position: absolute;
-    top: 130px;
-    left: 250px;
-    font-size: 7.0rem;
+    margin: 15rem 0 0 20rem;
+    font-size: 45px;
+    font-weight: 700;
   }
-
 }
 
 .banner-subtitle {
-  // outline: 2px solid orange;
-  font-size: 2.0rem;
-  padding: 1px;
-  width: 28ch;
+  margin-top: 0.6rem;
+  font-size: 24px;
   font-weight: 500;
+  width: 22ch;
+  color: $banner;
+  margin-left: 2rem;
 
   @include responsive($md) {
-    position: absolute;
-    top: 110px;
-    left: 80px;
-    width: 25ch;
-    font-size: 3.4rem;
-    padding: 5px;
+    margin: 0.6rem 0 0 5rem;
+    font-size: 26px;
+    font-weight: 500;
+  }
+  @include responsive($lg) {
+    margin: 0.6rem 0 0 8rem;
+    font-size: 26px;
+    font-weight: 500;
   }
   @include responsive($xl) {
-    position: absolute;
-    top: 250px;
-    left: 250px;
-    width: 38ch;
-    font-size: 5.0rem;
-    padding: 6px;
-  }
-}
-
-.banner-btn {
-  font-size: 1.8rem;
-  font-weight: 400;  
-  margin-top: 3%;
-  padding: 1.5%;
-  height: 33px;
-  width: 145px;
-  border: 0;
-  border-radius: 8px;
-  background-color: $links;
-  color: white;
-
-  @include responsive($md) {
-    font-size: 2.8rem;
-    position: absolute;
-    height: 46px;
-    width: 235px;
-    top: 260px;
-    left: 85px;
-    padding: 10px;
-  }
-  @include responsive($xl) {
-    font-size: 3.4rem;
-    position: absolute;
-    height: 60px;
-    width: 245px;
-    top: 415px;
-    left: 250px;
-    padding: 10px;
+    margin: 0.6rem 0 1rem 20rem;
+    font-size: 26px;
+    font-weight: 500;
+    width: 42ch;
   }
 }
 
 .banner-link {
-  color: white;
+  margin: 1rem 0 0 2rem;
+  padding: 0.5em 0.75em; //use 'em' to scale with font size in 'rem'
+  color: $banner;
+  background-color: $links;
   text-decoration: none;
+  font-size: 1.25rem;
+  text-align: center;
+  width: 9rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+
+  @include responsive($md) {
+    margin: 1rem 0 2rem 5rem;
+  }
+  @include responsive($lg) {
+    margin: 1rem 0 2rem 8rem;
+  }
+  @include responsive($xl) {
+    margin: 1rem 0 2rem 20rem;
+  }
+}
+
+.banner-link:hover, .banner-link:focus {
+  background: hsl(26, 81%, 58%);
 }
 
 .banner-wave {
-  // outline: 2px solid greenyellow;
-  bottom: -2px;
-  position: absolute;
+  bottom: 0;
   width: 100%;
-}
-
-.services-header {
-  margin: 0;
-  padding: 0;
-}
-
-.services-title {
-  // outline: 2px solid purple;
-  margin-top: 8%;
-  margin-bottom: 2%;
-  text-align: center;
-  font-size: 3.0rem;  
-  font-weight: 700;
-  color: $primary;
-
-  @include responsive($md) {
-    margin-top: 2%;
-    font-size: 7.8rem;  
-  }
-  @include responsive($xl) {
-    margin-top: 2%;
-    font-size: 9.0rem;  
-  }
-
-}
-
-.services-subtitle {
-  // outline: 2px solid gold;
-  margin-top: 0%;
-  padding-left: 20%;
-  padding-right: 20%;
-  font-size: 2.0rem;  
-  font-weight: 500;
-  text-align: center;
-  color: $secondary;
-
-  @include responsive($md) {
-    padding-left: 10%;
-    padding-right: 5%;
-    font-size: 3.2rem;  
-    width: 38ch;
-  }
-  @include responsive($xl) {
-    padding-left: 20%;
-    font-size: 4.6rem;  
-    width: 40ch;
-  }
+  position: absolute;
+  left: 0;
 }
 
 .services {
-  // outline: 2px solid purple;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 3.0rem;
+  // background: #64ffda;
+  grid-area: services;
 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 1fr 1fr 1fr;
   @include responsive($md) {
-    margin-right: 1%;
-    padding: 1%;
-    flex-direction:row;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr;
+  }
+  grid-template-areas: 
+  "services-heading"
+  "service-1"
+  "service-2"
+  "service-3"
+  ;
+  grid-gap: 0.2rem;
+  
+  @include responsive($xl) {
+    grid-template-columns: 0.1fr 0.1fr 0.1fr;
+    grid-template-rows: 0.1fr 0.1fr;
+    grid-template-areas: 
+    "services-heading services-heading services-heading"
+    "service-1 service-2 service-3"
+    ;
+  }
+}
+
+.services-heading {
+  // background: #6fffd2;
+  grid-area: services-heading;  
+  margin-top: 0;
+  @include responsive($md) {
+    width: 100%;
+  }
+
+  .services-title {
+  // background: #6fffd2;
+    font-size: 34px;
+    text-align: center;
+    margin-top: 1.5rem;
+    @include responsive($md) {
+      margin-top: 4.5rem;
+    }
+    @include responsive($lg) {
+      margin-top: 12rem;
+    }
+    @include responsive($xl) {
+      margin: 20rem 0 0 20rem;
+      font-size: 45px;
+    }
+  }
+  .services-subtitle {
+    font-size: 24px;
+    text-align: center;
+    margin: 0 2rem 2.5rem 2rem;
+    width: 80%;
+    @include responsive($md) {
+      margin: 0 2rem 2.5rem 5rem;
+      width: 100%;
+      max-width: 51ch;
+    }
+    @include responsive($lg) {
+      margin: 0 2rem 2.5rem 12.5rem;
+      width: 100%;
+      max-width: 57ch;
+    }
+    @include responsive($xl) {
+      margin: 0 2rem 5rem 33rem;
+      width: 100%;
+      // max-width: 5ch;
+    }
+  }
+}
+
+.service-1 {
+  // background: #a7ffeb;
+  grid-area: service-1;
+  margin: 0;
+  @include responsive($md) {
+    height: 16rem;
   }
   @include responsive($xl) {
-    height: 1000px;
-    padding-right: 1%;
-    flex-direction:row;
+    margin: 0 2rem 0 25rem;
+    max-width: 100%;
   }
+}
+
+.service-2 {
+  // background: #84ffff;
+  grid-area: service-2;
+  @include responsive($md) {
+    height: 16rem;
+  }
+  @include responsive($xl) {
+    margin: 0 2rem 0 0;
+    max-width: 100%;
+  }
+  
+}
+
+.service-3 {
+  // background: #18ffff;
+  grid-area: service-3;
+  @include responsive($md) {
+    height: 16rem;
+  }
+  @include responsive($xl) {
+    margin: 0 0 0 0;
+    max-width: 100%;
+  }
+  
 }
 
 .service-card {
-  // outline: 2px solid greenyellow;
-  padding: 8px;
-  margin-left: 16%;
-  height: 450px;
-  width: 64%;
-  flex: 1;
+  // background: #de6c17;
+  border: 2px solid lightgrey;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+  border-radius: 8px;
+  margin: 0 3rem 0.625rem 2.5rem;
+  overflow: hidden;
+  max-height: 100%;
+
+  // margin: 0.5rem 0.6rem 1rem 0.625rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr 0.1fr;
+  grid-template-areas: 
+  "card-image"
+  "card-detail"
+  "card-link"
+  ;
 
   @include responsive($md) {
-    padding: 1%;
-    margin-left: 1%;
-    height: 590px;
-    position: relative;
+    // outline: 2px solid green;
+    max-width: 100%;
+    
+    height: 15rem;
+    max-height: 15rem;
+    margin: 0.5rem 5rem;
+
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "card-image card-detail"
+    "card-image card-detail"
+    "card-image card-link"
+    ;
   }
+
+  @include responsive($lg) {
+    height: 15rem;
+    max-height: 15rem;
+    margin: 0.5rem 10rem;
+
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "card-image card-detail"
+    "card-image card-detail"
+    "card-image card-link"
+    ;
+  }
+
   @include responsive($xl) {
-    // bottom: 0%
-    // margin-left: 1%;
-    padding: 0.5%;
-    height: 100%;
-    position: relative;
+    height: 35rem;
+    max-height: 35rem;
+    max-width: 25rem;
+    margin: 0;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr 0.1fr;
+    grid-template-areas: 
+    "card-image"
+    "card-detail"
+    "card-link"
+    ;
   }
+
+  transition: 200ms transform ease-in-out;
 
 }
 
-.card-inner {
-  border: 2px solid lightgrey;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 100%;
-  position: relative;
+.service-card:hover {
+  transform: scale(1.025);
 }
 
 .card-image {
-  // outline: 2px solid lightgrey;
+  grid-area: card-image;
   width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  min-width: 20rem;
   display: block;
-}
-
-.card-detail {
-  // outline: 2px solid orangered;
-  height: 30%;
-  padding-bottom: 0.8em;
-
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  @include responsive($sm) {
+    min-width: 20rem;
+  }
   @include responsive($md) {
-    padding-bottom: 1em;
-    height: 50%;
+    min-width: 18rem;
   }
-  @include responsive($xl) {
-    padding-bottom: 3em;
-    height: 30%;
+  @include responsive($md) {
+    min-width: 15rem;
+  }
+  @include responsive($lg) {
+    min-width: 20rem;
+  }
+
+}
+
+.card-detail{
+  // background: black;
+  grid-area: card-detail;
+  width: 16rem;
+  height: 14.5rem;
+  margin-left: 1.2rem;
+  margin-top: 1.3rem;
+  
+  @include responsive($md) {
+    margin-left: 0.2rem;
+    height: 12rem;
+    width: 100%;
+    margin-top: 0;
+  }
+  
+  .card-heading {
+    font-size: 26px;
+    margin: 0 0 0.5rem 0;
+    color: $primary;
+    @include responsive($md) {
+      margin: 1.3rem 1rem 0 1rem;
+    }
+  }
+
+  .card-text {
+    font-size: 18px;
+    // margin: 0 1rem 0 0;
+    color: $secondary;
+    @include responsive($md) {
+      margin: 0.5rem 0 0 1rem;
+      width: 35ch;
+    }
+    @include responsive($lg) {
+      margin: 0.5rem 0 0 1rem;
+      width: 44ch;
+    }
+    @include responsive($xl) {
+      margin: 0.5rem 0 0 1rem;
+      width: 30ch;
+    }
   }
 }
 
-.card-heading {
-  margin: 20px 20px 10px 20px;
-  font-size: 2.4rem;  
+.card-link {
+    // background: #18ffff;
+
+  grid-area: card-link;
+  font-size: 20px;
   font-weight: 700;
-  // text-align: center;
-  color: $primary;
-
-  @include responsive($md) {
-    font-size: 3.4rem;
-  }
-  @include responsive($xl) {
-    margin: 40px 50px 14px 50px;
-    font-size: 4.8rem;
-  }
-}
-
-.card-text {
-  // outline: 2px solid greenyellow;
-  margin: 0 20px 0 20px;
-  font-size: 1.6rem;  
-  font-weight: 500;
-  text-align: left;
-  color: $secondary;
-
-  @include responsive($md) {
-    font-size: 2.0rem;
-  }
-  @include responsive($xl) {
-    margin: 0 50px 0 50px;
-    font-size: 3.6rem;
-  }
-
-}
-
-.service-link {
-  // outline: 2px solid greenyellow;
-  margin: 0px 0px 15px 20px;
-  font-size: 1.8rem;
+  margin: 0 0 1.5rem 1.2rem;
+  padding: 0;
   color: $links;
   text-decoration: none;
-  font-weight: 700;
-  position: absolute;
-  bottom: 0px;
 
   @include responsive($md) {
-    // bottom: 0;
-    left: 0;
-    bottom: 25px;
-    margin-bottom: 0;
-    font-size: 2.2rem;
+    margin: 0rem 1rem 01rem 1.2rem;
   }
   @include responsive($xl) {
-    left: 5%;
-    bottom: 35px;
-    font-size: 3.4rem;
+    margin: 2rem 1rem 01rem 1.2rem;
   }
-
 }
 
-.service-link:after {
-  content: " >"
+.card-link:after {
+  content: " >";
 }
